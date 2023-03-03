@@ -9,9 +9,12 @@ import java.io.*;
 
 public class CommonActions {
     private static WebDriver driver;
+    public static String browserName = "config.browser";
     private static WebDriver createDriver() throws FileNotFoundException {
         GetPropertyValue propertyValue = new GetPropertyValue();
-        String browserType = propertyValue.getPropertyValue("config.browser");
+        String browserType = System.getProperty(browserName);
+        if(browserType == null){
+            browserType = propertyValue.getPropertyValue(browserName);}
         switch (browserType) {
             case "firefox":
                 System.setProperty("webdriver.firefox.driver", "drivers/macos/geckodriver");
