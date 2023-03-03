@@ -21,9 +21,8 @@ public class BasePage {
         String url = propertyValue.getPropertyValue("config.baseUrl");
         driver.get(url);
     }
-    public WebElement waitElementIsVisible(WebElement element) {
+    public void waitElementIsVisible(WebElement element) {
         new WebDriverWait(driver, Duration.ofSeconds(4)).until(ExpectedConditions.visibilityOf(element));
-        return element;
     }
     public BasePage clickButton(By selector) {
         driver.findElement(selector).click();
