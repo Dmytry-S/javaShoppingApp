@@ -2,8 +2,7 @@ package selenium.tests;
 
 import common.CommonActions;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 import pages.*;
 
 import java.io.FileNotFoundException;
@@ -20,12 +19,12 @@ public class BaseTest {
     public BaseTest() throws FileNotFoundException {
     }
 
-    @BeforeTest(alwaysRun = true)
-    public void beforeTest() throws FileNotFoundException {
+    @BeforeSuite(alwaysRun = true)
+    public void before() throws FileNotFoundException {
         basePage.openPage();
     }
-    @AfterTest(alwaysRun = true)
-    public void afterTest() {
+    @AfterSuite(alwaysRun = true)
+    public void after() {
         driver.quit();
     }
 }

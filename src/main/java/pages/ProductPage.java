@@ -17,6 +17,10 @@ public class ProductPage extends BasePage {
     public void isProductInBucket() {
         Assert.assertTrue(driver.findElement(shopBadge).isDisplayed(), "Element not found");
     }
+    public void isProductNumberCorrect() {
+        int productNumber = driver.findElements(productItems).size();
+        Assert.assertEquals(productNumber, itemNumber, "Products Number incorrect");
+    }
     public void goToBucket() {
         clickButton(buttonBucket);
     }
@@ -24,4 +28,6 @@ public class ProductPage extends BasePage {
     private final By buttonAdd = By.id("add-to-cart-sauce-labs-bolt-t-shirt");
     private final By shopBadge = By.cssSelector(".shopping_cart_badge");
     private final By buttonBucket = By.cssSelector(".shopping_cart_link");
+    private final By productItems = By.cssSelector(".inventory_item");
+    private final int itemNumber = 6;
 }

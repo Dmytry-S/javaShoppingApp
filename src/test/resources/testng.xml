@@ -3,7 +3,8 @@
 <suite name="All" >
     <test name="/Users/dmsv/IdeaProjects" >
         <classes>
-            <class name="selenium.tests.BuyProductTest" />
+            <class name="selenium.tests.productsTests.BuyProductTest" />
+            <class name="selenium.tests.productsTests.CheckProductNumberTest" />
         </classes>
     </test>
 </suite>

@@ -1,17 +1,17 @@
-package selenium.tests;
+package selenium.tests.productsTests;
 
 import org.testng.annotations.Test;
+import selenium.tests.BaseTest;
 
 import java.io.FileNotFoundException;
 import java.util.concurrent.TimeUnit;
 
 @Test
-public class BuyProductTest extends BaseTest{
+public class BuyProductTest extends BaseTest {
     public BuyProductTest() throws FileNotFoundException {
     }
     @Test(priority = 1)
-    public void loginToApp() throws InterruptedException, FileNotFoundException {
-        basePage.openPage();
+    public void loginToApp() throws FileNotFoundException {
         loginPage.loginToShop();
         loginPage.clickButtonLogin();
         loginPage.isLoginCorrect();
@@ -27,7 +27,6 @@ public class BuyProductTest extends BaseTest{
     public void inBucket() throws InterruptedException {
         bucketPage.isProductCorrect();
         bucketPage.goToCheckout();
-        TimeUnit.SECONDS.sleep(2);
     }
     @Test(priority = 4)
     public void checkout() throws InterruptedException {
