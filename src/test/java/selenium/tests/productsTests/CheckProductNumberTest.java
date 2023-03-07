@@ -11,7 +11,6 @@ public class CheckProductNumberTest extends BaseTest {
     }
     @Test(priority = 1)
     public void loginToApp() throws FileNotFoundException {
-        basePage.openPage();
         loginPage.loginToShop();
         loginPage.clickButtonLogin();
         loginPage.isLoginCorrect();

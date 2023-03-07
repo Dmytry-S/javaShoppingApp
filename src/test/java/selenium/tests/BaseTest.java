@@ -19,12 +19,12 @@ public class BaseTest {
     public BaseTest() throws FileNotFoundException {
     }
 
-    @BeforeSuite(alwaysRun = true)
-    public void before() throws FileNotFoundException {
+    @BeforeClass(alwaysRun = true)
+    public void beforeClass() throws FileNotFoundException {
         basePage.openPage();
     }
     @AfterSuite(alwaysRun = true)
-    public void after() {
+    public void afterSuit() {
         driver.quit();
     }
 }
