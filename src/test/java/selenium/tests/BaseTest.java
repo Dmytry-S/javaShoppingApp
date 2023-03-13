@@ -19,8 +19,8 @@ public class BaseTest {
     public BaseTest() throws FileNotFoundException {
     }
 
-    @BeforeClass(alwaysRun = true)
-    public void beforeClass() throws FileNotFoundException {
+    @BeforeMethod(alwaysRun = true)
+    public void beforeMethod() throws FileNotFoundException {
         basePage.openPage();
     }
     @AfterSuite(alwaysRun = true)

@@ -25,6 +25,7 @@
             <artifactId>testng</artifactId>
             <version>7.7.1</version>
         </dependency>
+
     </dependencies>
 
     <properties>
